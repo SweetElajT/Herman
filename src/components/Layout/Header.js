@@ -34,17 +34,17 @@ const Header = () => {
       <ul className="mobile-navigation">
         <li>
           <NavLink activeClassName="active" to={"/"}>
-            Home
+            Strona główna
           </NavLink>
         </li>
         <li>
           <NavLink to={"/menu"}>Menu</NavLink>
         </li>
         <li>
-          <NavLink to={"/about"}>About</NavLink>
+          <NavLink to={"/about"}>O nas</NavLink>
         </li>
         <li>
-          <NavLink to={"/contact"}>Contact</NavLink>
+          <NavLink to={"/contact"}>Kontakt</NavLink>
         </li>
       </ul>
     </Box>
@@ -78,17 +78,17 @@ const Header = () => {
               <ul className="navigation-menu">
                 <li>
                   <NavLink activeClassName="active" to={"/"}>
-                    Home
+                    Strona główna
                   </NavLink>
                 </li>
                 <li>
                   <NavLink to={"/menu"}>Menu</NavLink>
                 </li>
                 <li>
-                  <NavLink to={"/about"}>About</NavLink>
+                  <NavLink to={"/about"}>O nas</NavLink>
                 </li>
                 <li>
-                  <NavLink to={"/contact"}>Contact</NavLink>
+                  <NavLink to={"/contact"}>Kontakt</NavLink>
                 </li>
               </ul>
             </Box>

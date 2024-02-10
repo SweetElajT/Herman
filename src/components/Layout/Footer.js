@@ -61,7 +61,7 @@ const Footer = () => {
                 mt={3}
                 textAlign="center"
             >
-                © 2024 Whataburger. Wszelkie prawa zastrzeżone.
+                © 2024 Whataburger. Wszelkie prawa zastrzeżone. Michał Łopata | Artur Kupś
             </Typography>
         </Box>
     );

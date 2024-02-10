@@ -1,51 +1,48 @@
+
 import React from "react";
-import Layout from "./../components/Layout/Layout";
-import { Box, Typography } from "@mui/material";
+import whataburgerStory from "../images/whataburger-story.jpg"; // Make sure this path is correct
+import Layout from "../components/Layout/Layout";
+import { Box, Typography, Card, CardContent, CardMedia, useMediaQuery, useTheme } from "@mui/material";
 
 const About = () => {
-  return (
-    <Layout>
-      <Box
-        sx={{
-          my: 15,
-          textAlign: "center",
-          p: 2,
-          "& h4": {
-            fontWeight: "bold",
-            my: 2,
-            fontSize: "2rem",
-          },
-          "& p": {
-            textAlign: "justify",
-          },
-          "@media (max-width:600px)": {
-            mt: 0,
-            "& h4 ": {
-              fontSize: "1.5rem",
-            },
-          },
-        }}
-      >
-        <Typography variant="h4">Witajcie w naszej restauracji online!</Typography>
-        <p>
-        Witajcie w naszej restauracji online, gdzie pasja do doskonałego smaku spotyka się z wygodą zamawiania!
-        Jesteśmy dumni z naszego niezrównanego asortymentu burgerów, które stanowią kwintesencję prawdziwej kulinarniej przyjemności.
-        Nasze burgery to nie tylko dania – to doświadczenie, które angażuje wszystkie zmysły i pozostawia niezapomniane wrażenia smakowe.
-        W sercu naszej kuchni tkwi staranne wybieranie najwyższej jakości składników, dbając o świeżość i autentyczność każdego elementu.
-        Każdy burger to kompozycja starannie dobranych smaków i aromatów, które przeniosą Cię w podróż po kulinarnej rozkoszy.
-        Nieustannie inspirujemy się różnorodnością kulinarną, dlatego w naszej ofercie znajdziesz zarówno klasyczne, tradycyjne burgery,
-        jak i innowacyjne propozycje dla wegetarian, wegan, czy tych, którzy cenią zdrowy tryb życia. Każdy znajdzie tutaj coś dla siebie!
-        </p>
-        <br />
-        <p>
-        Zapraszamy do odkrywania naszego świata burgerów i doświadczania prawdziwej rozkoszy kulinarnej w każdym kęsie!
-        Dla nas nie ma większej przyjemności niż widzieć uśmiech na twarzy naszych klientów, dlatego każdy burger
-        to dla nas więcej niż tylko danie – to obietnica niezapomnianego doświadczenia smakowego. Dołącz do nas i pozwól
-        sobie na kulinarną podróż pełną smaku i przyjemności!
-        </p>
-      </Box>
-    </Layout>
-  );
+    const theme = useTheme();
+    const matches = useMediaQuery(theme.breakpoints.down("sm"));
+
+    return (
+        <Layout>
+            <Box sx={{ my: matches ? 5 : 15, p: 2 }}>
+                <Card sx={{ maxWidth: 800, mx: "auto", boxShadow: 5 }}>
+                    <CardMedia
+                        component="img"
+                        height="240"
+                        image={whataburgerStory}
+                        alt="Whataburger Story"
+                    />
+                    <CardContent>
+                        <Typography gutterBottom variant="h4" component="div" sx={{ fontWeight: "bold", mb: 3 }}>
+                            Nasza historia
+                        </Typography>
+                        <Typography variant="body1" color="text.secondary" textAlign="justify">
+                            Od skromnych początków w małym food trucku w 1980 roku, Whataburger przekształcił pasję i tradycję w
+                            kulinarną podróż. Założyciel, Jan "Big Burger" Kowalski, znany ze swojej miłości do soczystych,
+                            wielowarstwowych burgerów, chciał podzielić się swoją kreacją z całym światem.
+
+                            Z biegiem lat Whataburger stał się symbolem autentycznych, ręcznie robionych burgerów. Nasze menu,
+                            inspirowane lokalnymi składnikami i międzynarodowymi smakami, sprawia, że każde ugryzienie to świętowanie
+                            różnorodności i jakości.
+
+                            Dziś Whataburger nie jest już tylko jedną restauracją, ale rodzinną siecią, która rozszerza swoją obecność
+                            na nowe rynki, nigdy nie zapominając o naszych korzeniach i oryginalnym przepisie, który uczynił nas sławnymi.
+
+                            W każdym burgerze, który serwujemy, jest kawałek naszej historii. Zapraszamy do dołączenia do naszej rodziny
+                            i stworzenia własnej historii smaków z Whataburgerem. Nasz zespół czeka, aby powitać Cię i zaoferować
+                            nie tylko posiłek, ale część naszego dziedzictwa.
+                        </Typography>
+                    </CardContent>
+                </Card>
+            </Box>
+        </Layout>
+    );
 };
 
 export default About;

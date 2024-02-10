@@ -15,10 +15,12 @@
   color: goldenrod !important;
   font-weight: bold !important;
 }
-/* mobile view */
+
 .mobile-navigation {
-  list-style: none;
+  overflow-y: auto;
+  max-height: 100vh;
 }
+
 .mobile-navigation li {
   margin-top: 20px;
 }
